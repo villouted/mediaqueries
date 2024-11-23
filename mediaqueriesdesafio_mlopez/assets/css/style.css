@@ -1,0 +1,140 @@
+* {
+  padding: 0;
+  margin: 0
+}
+
+.grid_container {
+  display: grid;
+  grid-template-areas: "aside order_by order_by"
+      "aside main main"
+      "footer pagination pagination";
+  grid-template-rows: 1fr 20fr 1fr;
+  grid-template-columns: 5fr 10fr 10fr;
+  height: 100vh;
+}
+
+.order_by {
+  display: flex;
+  margin: 10px;
+  flex-direction: column;
+  grid-area: order_by;
+  justify-content: center;
+  align-items: center;
+
+}
+
+header {
+  display: flex;
+  grid-area: header;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d0432;
+
+}
+
+aside {
+  color: #ffffff;
+  grid-area: aside;
+  background-color: #0d0432;
+}
+
+main {
+  grid-area: main;
+  overflow-y: auto;
+
+}
+
+footer {
+  grid-area: footer;
+  background-color: #0d0432;
+  margin: 0;
+
+
+
+}
+
+.grid_categoria {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+
+}
+
+.grid_main {
+  padding-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 5px;
+  justify-content: space-around;
+  align-content: space-evenly;
+  align-items: center;
+  justify-items: center;;
+}
+
+li {
+  padding: 5px;
+}
+
+.productos_card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+
+.productos_card img {
+
+  border: 1px;
+  padding: 10px;
+}
+
+.precio {
+  padding: 2em;
+}
+
+.pagination {
+  color: #0d0432;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: pagination;
+}
+
+.menu_burger{
+  display: none;
+}
+@media (max-width:575px) {
+  body {
+      margin: 0;
+      .grid_container {
+          display: block;
+
+      }
+
+      .grid_main {
+          overflow: auto;
+          display: block;
+          grid-template-columns:1fr;
+      }
+      .menu_burger{
+          display: block;
+      }
+      .navbarul{
+          display: none;
+      }
+      .grid_categoria {
+
+          display: flex;
+          padding: 0;
+      
+      }
+  }
+}
